@@ -1,0 +1,143 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill</title>
+</head>
+<body>
+
+
+
+<table border>
+    <tr>
+        <th>Item</th>
+        <th>Price</th>
+        <th>Que</th>
+    </tr>
+    <tr>
+        <td>Ice-cream</td>
+        <td>100/-</td>
+        <td> <input type="number" id="ice"> </td>
+    </tr>
+    <tr>
+        <td>Coca-Cola</td>
+        <td>30/-</td>
+        <td> <input type="number" id="coca"> </td>
+    </tr>
+    <tr>
+        <td>Candy</td>
+        <td>20/-</td>
+        <td> <input type="number" id="candy"> </td>
+    </tr>
+    <tr>
+        <td>Chocleat</td>
+        <td>60/-</td>
+        <td> <input type="number" id="cho"> </td>
+    </tr>
+    <tr>
+        <td>Chips</td>
+        <td>10/-</td>
+        <td> <input type="number" id="chip"> </td>
+    </tr>
+    <tr>
+        <td colspan="4">
+            <button id="bill">Bill</button>
+        </td>
+    </tr>
+</table>
+
+
+
+<hr>
+<br/>
+<br/>
+<br/>
+
+
+
+<table border>
+    <tr>
+        <th>item</th>
+        <th>price</th>
+        <th>que</th>
+        <th>total</th>
+    </tr>
+    <tr>
+        <td>Ice-cream</td>
+        <td>100/-</td>
+        <td id="ice1">  </td>
+        <td id="ice2"> </td>
+    </tr>
+    <tr>
+        <td>Coca-Cola</td>
+        <td>30/-</td>
+        <td id="coca1">  </td>
+        <td id="coca2"> </td>
+    </tr>
+    <tr>
+        <td>Candy</td>
+        <td>20/-</td>
+        <td id="candy1"> </td>
+        <td id="candy2"> </td>
+    </tr>
+    <tr>
+        <td>Chocleat</td>
+        <td>60/-</td>
+        <td id="cho1"> </td>
+        <td id="cho2"> </td>
+    </tr>
+    <tr>
+        <td>Chips</td>
+        <td>10/-</td>
+        <td id="chip1"> </td>
+        <td id="chip2"> </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+          total of all =  
+        </td>
+        <td colspan="2" id="total">
+           
+        </td>
+    </tr>
+</table>
+    
+</body>
+
+
+
+<script>
+
+     document.getElementById("bill").onclick = function(){
+    
+    let ice = document.getElementById("ice").value;
+    let coca = document.getElementById("coca").value;
+    let candy = document.getElementById("candy").value;
+    let cho = document.getElementById("cho").value;
+    let chip = document.getElementById("chip").value;
+    
+    
+    document.getElementById("ice1").innerHTML = ice
+    document.getElementById("coca1").innerHTML = coca
+    document.getElementById("candy1").innerHTML = candy
+    document.getElementById("cho1").innerHTML = cho
+    document.getElementById("chip1").innerHTML = chip
+    
+    
+    document.getElementById("ice2").innerHTML = ice * 100
+    document.getElementById("coca2").innerHTML = coca * 30
+    document.getElementById("candy2").innerHTML = candy * 20
+    document.getElementById("cho2").innerHTML = cho * 60
+    document.getElementById("chip2").innerHTML = chip * 10
+    
+    document.getElementById("total").innerHTML = ice*100 + coca*30 + candy*20 + cho*60 + chip*10 ;
+    
+    }
+    
+    </script>
+
+
+
+</html>
