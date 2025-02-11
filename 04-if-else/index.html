@@ -11,35 +11,49 @@
 <body>
 
     <div class="container">
-        <div class="row" id="card">
-
+        <div class="row" id="allbtn">
+           
         </div>
     </div>
-
+    
 </body>
 
 <script>
-    
-    let card = document.getElementById("card");
-    let sum =0
-    
-    
-    let n =window.prompt("enter card velue")
-    for(let i=0; i<n; i++){
-       
-        sum += i; 
-    }
-    card.innerHTML +=`
-                    <div class="card" style="width: 18rem;">
+
+    let allbtn = document.getElementById("allbtn");
+
+
+    let sum = 0
+
+
+    let n = window.prompt("enter cards value")
+for(let i=0; i<n; i++)
+{
+
+    sum = sum + i;
+
+   
+
+    allbtn.innerHTML +=`
+         <div class="col-2 g-2">
+                <div class="card shadow" >
                     <img src="https://www.coldlove.in/cdn/shop/files/Healthy-AF-calories-mentioned_SFChoc1200x1200_68f36071-594f-4896-a072-fa380b5204cf.jpg?v=1723026075&width=1445" class="card-img-top" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title">Card title</h5>
-                        <p class="card-text"> card's content.</p>
-                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                      <h5 class="card-title">ICE CREAM</h5>
+                     
+                      <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
                     </div>
-                    </div>
+                  </div>
+            </div>
+    
     `
 
-</script>
 
+}
+
+
+
+
+
+</script>
 </html>
