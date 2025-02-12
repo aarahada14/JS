@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TAIL</title>
+</head>
+<body>
+   
+</body>
+
+<script>
+    
+     function rec1(n) {
+        if (n > 0) {
+          rec1(n - 1);
+          console.log("TAIL " +n);
+        }
+      }
+
+// function rec1(n) {
+//   // 4
+//   if (n > 0) {
+//     function rec1(n) {
+//       // 3
+//       if (n > 0) {
+//         function rec1(n) {
+//           // 2
+//           if (n > 0) {
+//             function rec1(n) {
+//               // 1
+//               if (n > 0) {
+//                 rec1(n - 1);
+//                 console.log(n);
+//               }
+//             }
+//             console.log(n);
+//           }
+//         }
+//         console.log(n);
+//       }
+//     }
+
+//     console.log(n);
+//   }
+// }
+
+rec1(4);
+
+</script>
+
+
+
+</html>
