@@ -12,12 +12,10 @@
     
 </body>
 
+
+
 <script>
-
 // iife = immedeat invoked function expression
-
-
-
 function first(){
     console.log("first is called")
 }
@@ -38,12 +36,34 @@ first();
 
 
 // let fun1 = () => {
-
 // }
 
 
+</script>
 
 
+
+<script>
+    let input = 1;
+    document.getElementById("web").innerHTML = input ? success() : error();
+
+
+
+
+    const success = () =>{
+        return "<h1>login successfull </h1>"
+    }
+
+    const error = () =>{
+        return "<h2>there is error</h2>"
+    }
+
+    
 
 </script>
+
+
+
 </html>
+
+
