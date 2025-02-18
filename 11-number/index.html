@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>number</title>
+</head>
+<body>
+    
+</body>
+
+<script>
+
+
+
+    let num = new Number(10);
+    console.log(num)
+
+    let ln = 10;
+
+    let num2 = 10000000
+    console.log(num2.toString().length)
+
+    let num3 = 2.4567;
+
+    console.log(num3.toFixed(2))
+    
+    let num4 = 12.357467674;
+
+    console.log(num4.toPrecision(2))
+    console.log(num4.toExponential(1))
+
+
+
+    console.log(Math)
+    console.log(Math.PI)
+
+    let n1 = 10.18564574;
+
+    console.log(Math.round(n1));
+
+    console.log(Math.ceil(n1))
+
+    let n2 = -10;
+
+    console.log(Math.abs(n2))
+    let max = 6;
+    let min = 1;
+    0.2 *1
+    let rn = Math.random()*((max - min +1) + min)
+
+
+    console.log(Math.ceil(rn))
+
+    let date = new Date();
+
+
+    console.log(date.toLocaleTimeString())
+    document.write(`<h1>${date.toLocaleTimeString()}</h1>`)
+    document.write(`<h1>${date.toLocaleDateString()}</h1>`)
+
+
+
+    let d = Date.now();
+
+    // console.log(d/(1000*60*60*24*366));
+    // console.log(date.getDate())
+
+    // console.log(d)
+
+    // let c = new Date("July, 20, 2000");
+
+    // let d2 = new Date(d)
+
+    // console.log(d2.toLocaleString());
+
+
+
+
+    let b_date = new Date("2000-1-14");
+    let c_date = new Date();
+
+    console.log()
+    console.log()
+
+    let age = c_date.getTime()-b_date.getTime()
+
+    console.log(age/(1000*60*60*24*365))
+
+
+
+
+
+</script>
+
+</html>
