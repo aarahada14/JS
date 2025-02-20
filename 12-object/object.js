@@ -3,6 +3,8 @@
 
 // let obj2 = {};
 
+
+
 // obj.name = "amruta";
 // obj.email = "amtruta@gmail.com"
 // obj.subject = "math"
@@ -28,8 +30,14 @@ let obj3 = {
     hobbies : ["cricket", "hocky", "running"]
 }
 
+// console.log(obj3.hobbies)
 
-// // console.log(obj3.hobbies)
+// for(let key in obj3){
+//     console.log(obj3[key])
+// }
+
+
+
 
 // let obj4 = {obj, obj2}
 
@@ -55,11 +63,6 @@ let obj3 = {
 // console.log(obj3.hasOwnProperty("last"))
 
 
-
-
-// for(let key in obj3){
-//     console.log(obj3[key])
-// }
 
 main()
 function main(){
@@ -87,8 +90,3 @@ function submain({name, id, type}){
     // const {name, id, type}  = user
     console.log(name,id, type)
 }
-
-
-
-
-
