@@ -5,7 +5,7 @@ function fist(num){
     // console.log(num*num)
 }
 
-let val1 = first(10); // 100 - return
+let val1 = fist(10); // 100 - return
 
 console.log(val1)
 
@@ -35,7 +35,11 @@ console.log(value)
 // console.log(value)
 
 
+
+
 // /////////////////////////////////////////
+
+
 // console.log(try1())
 
 // function try1(){
@@ -55,12 +59,12 @@ console.log(value)
 
 
 
-let fun = (name)=>{ // declaration
+let fun = (name)=>{                           // declaration
     console.log(`my name is ${name}`)
     // return `my name is ${name}`
     }
     
-    const telname = fun("Alishan");  // assign
+    const telname = fun("Aara");          // assign
     
     // const telname = `my name is alishan`  // return
     // const telname = udefine // console
