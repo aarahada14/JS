@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>slider</title>
+
+    <style>
+        .p{
+            padding: 10px;
+        }
+        .px{
+           padding: 8px;
+        }
+        .container{
+            width:1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+           
+        }
+        .main-slider{
+            overflow-x: hidden ;
+           
+        }
+        .slider{
+           
+            width: 4000px;
+            display: flex;
+            transition: all 0.4s;
+        }
+        .slides{
+            width: 100%; 
+        }
+        .slides img{
+            width: 100%;  
+        }
+        
+
+    </style>
+    
+</head>
+
+
+
+
+<body>
+    
+    <div class="container p">
+
+       <div class="p">
+        <button onclick="prev()">⬅️</button>
+       </div>
+       
+        
+        <div class="main-slider">
+            <div class="slider">
+                <div class="slides">
+                    <img src="https://png.pngtree.com/background/20250108/original/pngtree-3d-iconic-disney-castle-on-beautiful-background-picture-image_15812188.jpg" alt="">
+                </div>
+                <div class="slides">
+                    <img src="https://wallpapercave.com/wp/wp7924509.jpg" alt="">
+                </div>
+                <div class="slides">
+                    <img src="https://e0.pxfuel.com/wallpapers/312/436/desktop-wallpaper-tangled-2022-movie.jpg" alt="">
+                </div>
+                <div class="slides">
+                    <img src="https://images3.alphacoders.com/817/817627.jpg" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="p">
+            <button onclick="next()">➡️</button>
+        </div>
+       
+    </div>
+<div style="margin-left: 48%;">
+    <button class="px" onclick="first(0)">1</button>
+    <button  class="px" onclick="first(1)">2</button>
+    <button  class="px" onclick="first(2)">3</button>
+    <button  class="px" onclick="first(3)">4</button>
+
+</div>
+   
+
+</body>
+
+
+<script>
+    let slider = document.querySelector(".slider");
+    
+    let no = 0;
+    
+        function next(){    
+            if(no < 3 ){
+                 no++; 
+                 slider.style.transition= `all 0.4s`;
+            }
+             else{
+                 no = 0;
+                 slider.style.transition= `all 0s`;
+            }
+             slider.style.transform = `translateX(-${1000*no}px)`
+    
+        }
+    
+    
+        function prev(){ 
+           
+            if(no > 0){
+                no--;  
+                slider.style.transition= `all 0.4s`;
+            }
+             else{ 
+                 no = 3    
+                 slider.style.transition= `all 0s`;
+            }
+       slider.style.transform = `translateX(-${1000*no}px)`
+        }
+    
+    
+        function first(no)
+        {
+            slider.style.transform = `translateX(-${1000*no}px)`
+        }
+    
+    
+    
+    </script>
+</html>
