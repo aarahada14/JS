@@ -1,0 +1,39 @@
+.p{
+    padding: 10px;
+}
+.px{
+   padding: 8px;
+}
+.t{
+    text-align: center;
+}
+.b-shadow{
+    box-shadow: 5px 5px 5px 5px lightblue;
+}
+
+.m-b{
+    margin-bottom: 50px;
+}
+.container{
+    width:1000px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+   
+}
+.main-slider{
+    overflow-x: hidden ;
+   
+}
+.slider{
+   
+    width: 4000px;
+    display: flex;
+    transition: all 0.4s;
+}
+.slides{
+    width: 100%; 
+}
+.slides img{
+    width: 100%;  
+}
