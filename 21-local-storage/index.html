@@ -1,0 +1,135 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localstorage</title>
+</head>
+<body>
+
+    <input type="text" id="username"  placeholder="enter username" />
+    <br/>
+    <br/>
+    <input type="text" id="email" placeholder="enter email" />
+    <br/>
+    <br/>
+    <input type="text" id="password" placeholder="enter password" />
+    <br/>
+    <br/>
+    <button onclick="login()">login</button>
+    <button onclick="clear()">clear</button>
+    <hr><hr>
+    
+
+    <div id="head"></div>
+
+    
+</body>
+
+
+<script>
+
+let username = document.getElementById("username");
+let email = document.getElementById("email");
+let password = document.getElementById("password");
+
+let head = document.getElementById("head")
+
+let arr = JSON.parse(localStorage.getItem("users")) || []
+
+function clear(){
+
+    localStorage.clear()
+    
+}
+
+
+function login(){
+
+   let obj = {
+    userame: username.value,
+    email: email.value,
+    password : password.value
+   }
+
+arr.push(obj);
+
+   localStorage.setItem("users", JSON.stringify(arr))
+
+
+}
+
+
+
+
+function showData(){
+arr.map((ele) => {
+
+  const tag = `
+    <p>username: ${ele.userame} </p>
+    <p>email: ${ele.email} </p>
+    <p> password: ${ele.password}</p> <hr/>`
+
+    head.innerHTML += tag
+
+    console.log(tag)
+})
+
+
+  
+}
+
+
+showData()
+
+
+
+</script>
+
+<script>
+    
+//    let name = "full stack";
+
+//    let user = {
+//     name: "alishan",
+//     email: "alishan@gmail.com",
+//     phone: 5759657594587
+//    }
+
+// //    console.table(user)
+
+
+//   let data = [1, 2, 3,4 ,5]
+
+
+//    localStorage.setItem("n", name)
+
+//    localStorage.setItem("user",JSON.stringify(user))
+
+//    localStorage.setItem("data", JSON.stringify(data))
+
+
+//    let d = localStorage.getItem("data")
+
+//    console.log(JSON.parse(d))
+
+// localStorage.clear()
+
+
+
+
+// let ls = {
+//     user :{
+//             name: "alishan",
+//             email: "alishan@gmail.com",
+//             phone: 5759657594587
+//          },
+//      name: "alishan shaikH",
+//      data: [{}, {}]
+
+// }
+
+
+</script>
+</html>

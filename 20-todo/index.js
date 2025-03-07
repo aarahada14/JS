@@ -13,28 +13,67 @@ let task_arr = [];
 function addTask(){
 
     let obj = {
+        id: Math.round(Math.random()*1000),
         text : task.value,
         status : false
     }
-
-    task_arr.push(obj)
-    console.log(task_arr)
-    showTask(task_arr)
-
-}
-
-function changeStatus(e){
-
-   let new_task_arr = task_arr.map((ele) => {
-        if(ele.text == e)
-        {     
-            ele.status = !ele.status
+    if(task.name=="")
+        {
+            task_arr.push(obj)
         }
-        return ele
+        else{
+          task_arr =  task_arr.map((ele) => {
+                if(ele.id == task.name)
+                {
+                    ele.text = task.value;
+                }
+                return ele;
+            })
+        }
             
-    })
-showTask(new_task_arr)
+    showTask(task_arr)
+    task.name = ""
+
 }
+
+
+
+//......................change status started.............//
+function changeStatus(e){
+    task_arr = task_arr.map((ele) => {
+            if(ele.id == e)
+            {     
+                ele.status = !ele.status
+            }
+            return ele     
+    })
+
+showTask(task_arr)
+}
+//......................change status ended.............//
+
+
+
+//......................Task delete started.............//
+function deleteTask(e){
+    task_arr =  task_arr.filter((ele) => ele.id != e)
+ 
+   showTask(task_arr)
+ }
+//......................Task delete ended.............//
+
+
+
+//......................Task edit started......................//
+function editTask(e)
+{
+    console.log(e)
+    task.value = e.text;
+    task.name=e.id
+}
+//......................Task edit ended......................//
+
+
 
 function showTask(array){
 
@@ -50,27 +89,30 @@ function showTask(array){
         let btn_delete = document.createElement("button"); 
 
         td_text.textContent = ele.text;
-        td_status.textContent = ele.status ? "👍Complet" : "👎Not complet";
-        td_status.onclick = () => changeStatus(ele.text)
-
         btn_edit.textContent="✏️"
+        btn_edit.setAttribute("class", "btn btn-info btn-sm")
         btn_delete.textContent="❌"
+        btn_delete.setAttribute("class", "btn btn-dark btn-sm")
 
+        td_status.textContent = ele.status ? "👍Complet" : "👎Not complet";
+
+        td_status.onclick = () => changeStatus(ele.id)
+        btn_delete.onclick = () => deleteTask(ele.id);
+        btn_edit.onclick = () => editTask(ele)
 
         td_edit.append(btn_edit)
         td_delete.append(btn_delete)
         tr.append(td_text, td_status, td_edit, td_delete)
 
-             if(ele.status)
-             {
-                 tr.setAttribute("class", 'table-primary')
-             }
-             else{
-                tr.setAttribute("class", 'table-info')
-             }
-             
-        tbody.append(tr)         
-   })
+         if(ele.status)
+         {
+             tr.setAttribute("class", 'table-success')
+         }
+         else{
+            tr.setAttribute("class", 'table-warning')
+         }
+         
+    tbody.append(tr)   
+    task.value=""      
+})
 }
-
-
