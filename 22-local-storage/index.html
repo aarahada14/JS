@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>local-storage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+   <div class="container mt-4 text-center p-3 border border-3 border-primary bg-primary-subtle rounded" style="width: 600px;">
+    <h2>Product </h2>
+    <input class="w-75 bg-primary-subtle border-info" type="text" id="img" placeholder="enter img"/> <br><br>
+    <input class="w-75 bg-primary-subtle border-info" type="text" id="item" placeholder="enter item name"/> <br><br>
+    <input class="w-75 bg-primary-subtle border-info" type="text" id="price" placeholder="enter price"/> <br><br>
+    <input class="w-75 bg-primary-subtle border-info" type="text" id="rate" placeholder="enter rate">  <br><br>
+
+    <button class="btn btn-primary w-25" onclick="add()">Add</button>
+
+   
+   </div> 
+   <div class="row" id="row">
+       
+   </div>
+    
+    
+</body>
+
+<script>
+let row = document.getElementById("row")
+let arr = JSON.parse(localStorage.getItem("arr")) || []
+
+
+    function setLocal(array)
+        {
+            localStorage.setItem("arr", JSON.stringify(array))
+            showItem(arr)
+        }
+
+    function add(){
+        let obj ={
+            id:Math.round(Math.random()*10000),
+            img : document.getElementById("img").value,
+            item : document.getElementById("item").value,
+            price : document.getElementById("price").value,
+            rate : document.getElementById("rate").value,
+        }
+        
+        arr.push(obj)
+        // console.log(arr)
+        // localStorage.setItem("arr", JSON.stringify(arr))
+        location.reload()
+        setLocal(arr)
+    }
+
+    function del(id){
+        let new_arr =  arr.filter((ele) => ele.id != id)
+        location.reload()
+        setLocal(new_arr)
+        
+    }
+
+    function showIteam(){
+    
+        arr.map((ele) => {
+            const card =
+            `<div class="col-2 g-3">
+                <div class="card p-2 shadow position-relative">
+                    <button onclick="del(${ele.id})" class="position-absolute btn btn-outline-danger rounded-circle btn-sm" style="right:10px;top:10px">❌</button>
+                    <img src=${ele.img} class="card-img-top w-100" alt="...">
+                    <div class="card-body text-center">
+                    <h5 class="card-title fs-1">${ele.item}</h5>
+                    <b class="card-text fs-5">${ele.price}</b> &nbsp  &nbsp
+                    <b class="card-text fs-5">${ele.rate}</b> <br>
+                    <a href="#" class="btn btn-primary">MORE</a>
+                    </div>
+                </div>
+            </div>`
+            row.innerHTML += card
+        })     
+    }
+
+    showIteam()
+
+</script>
+</html>
