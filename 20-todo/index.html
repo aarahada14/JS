@@ -16,6 +16,11 @@
 
     <div class="bg-secondary mx-auto d-flex gap-2 p-3 shadow rounded-3 " style="max-width:500px">
         <input type="text" placeholder="Add Task" class="form-control bg-secondary-subtle"  id="task"/>
+        <select class="form-control w-25" id="priority">
+            <option value="1">High</option>
+            <option value="2">Media</option>
+            <option value="3">low</option>
+        </select>
         <button class="btn btn-dark" id="add">Add</button>
     </div>
 
@@ -23,7 +28,9 @@
   
   
 <div class="container bg-body-secondary overflow-hidden  rounded-3  p-3" style="box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;">
-
+    <div class="container">
+        <div class="btn btn-black" onclick="sorting()">sort</div>
+      </div>
     <table class="table">
         <thead>
             <tr>

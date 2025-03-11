@@ -19,68 +19,12 @@
 
    
    </div> 
-   <div class="row" id="row">
+   <div class="row" id="show">
        
    </div>
     
     
 </body>
 
-<script>
-let row = document.getElementById("row")
-let arr = JSON.parse(localStorage.getItem("arr")) || []
-
-
-    function setLocal(array)
-        {
-            localStorage.setItem("arr", JSON.stringify(array))
-            showItem(arr)
-        }
-
-    function add(){
-        let obj ={
-            id:Math.round(Math.random()*10000),
-            img : document.getElementById("img").value,
-            item : document.getElementById("item").value,
-            price : document.getElementById("price").value,
-            rate : document.getElementById("rate").value,
-        }
-        
-        arr.push(obj)
-        // console.log(arr)
-        // localStorage.setItem("arr", JSON.stringify(arr))
-        location.reload()
-        setLocal(arr)
-    }
-
-    function del(id){
-        let new_arr =  arr.filter((ele) => ele.id != id)
-        location.reload()
-        setLocal(new_arr)
-        
-    }
-
-    function showIteam(){
-    
-        arr.map((ele) => {
-            const card =
-            `<div class="col-2 g-3">
-                <div class="card p-2 shadow position-relative">
-                    <button onclick="del(${ele.id})" class="position-absolute btn btn-outline-danger rounded-circle btn-sm" style="right:10px;top:10px">❌</button>
-                    <img src=${ele.img} class="card-img-top w-100" alt="...">
-                    <div class="card-body text-center">
-                    <h5 class="card-title fs-1">${ele.item}</h5>
-                    <b class="card-text fs-5">${ele.price}</b> &nbsp  &nbsp
-                    <b class="card-text fs-5">${ele.rate}</b> <br>
-                    <a href="#" class="btn btn-primary">MORE</a>
-                    </div>
-                </div>
-            </div>`
-            row.innerHTML += card
-        })     
-    }
-
-    showIteam()
-
-</script>
+<script src="index.js"></script>
 </html>
