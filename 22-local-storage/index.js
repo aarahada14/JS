@@ -76,5 +76,4 @@ let rate = document.getElementById("rate")
             show.innerHTML += card
         })     
     }
-
     showItem(arr)
