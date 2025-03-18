@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>salary</title>
+</head>
+
+<body>
+
+    
+<script>
+        
+    let salary = window.prompt("enter salary");
+
+    let pf = 12*salary/100;
+
+    let tax = 5*salary/100;
+
+    let inhand = salary -pf - tax;
+
+
+    document.write("<b>PF: </b>" + pf + "<br/>")
+    document.write("<b>TAX: </b>" + tax + "<br/>")
+    document.write("<b>inhand: </b>" + inhand + "<br/>")
+
+    document.write("<b>CTC: </b>" + salary + "<br/>")
+    
+</script>
+    
+</body>
+</html>
