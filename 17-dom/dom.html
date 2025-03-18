@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>dom</title>
+</head>
+
+<body>
+    
+<h1 id="head">This is head</h1>
+
+<button onclick="black()">change color</button>
+
+<br><br>
+
+<p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui placeat voluptatibus consequuntur doloremque voluptates quidem nulla nostrum commodi! </p>
+<p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui placeat voluptatibus consequuntur doloremque voluptates quidem nulla nostrum commodi! </p>
+<p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui placeat voluptatibus consequuntur doloremque voluptates quidem nulla nostrum commodi! </p>
+<p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui placeat voluptatibus consequuntur doloremque voluptates quidem nulla nostrum commodi! </p>
+<p class="para">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Qui placeat voluptatibus consequuntur doloremque voluptates quidem nulla nostrum commodi! </p>
+
+<br><br>
+
+<button id="orange">orange</button>
+<button id="pink">pink</button>
+<button id="yellow">yellow</button>
+<button id="green">green</button>
+
+</body>
+
+<script>
+
+    let element_teg = document.getElementsByTagName("h1")
+    console.log(element_teg)
+
+    let element_id = document.getElementById("head")
+    console.log(element_id)
+
+    let element_class = document.getElementsByClassName("para")
+    console.log(element_class)
+
+    let element_quary = document.querySelector(".para")
+    console.log(element_quary)
+
+    let element_quary_all = document.querySelectorAll(".para")
+    console.log(element_quary_all)
+
+
+    element_id.style.color="red"
+
+    element_class[0].style. backgroundColor="orange"
+    element_class[2].style. backgroundColor="orange"
+    element_class[4].style. backgroundColor="orange"
+
+
+    function color(){
+        element_class[1].style. backgroundColor="lightyellow"
+        element_class[3].style. backgroundColor="lightyellow"
+    }
+    color()
+
+
+    function black(){
+        element_id.style.color="black"
+        
+    }
+
+
+
+    let body_color = document.querySelector("body")
+
+    let orange = document.getElementById("orange").onclick = orange1
+    let pink = document.getElementById("pink").onclick = pink1
+    let yellow = document.getElementById("yellow").onclick = yellow1
+    let green = document.getElementById("green").onclick = green1
+
+    function orange1(){
+        body_color.style.backgroundColor="orange"
+    }
+    function pink1(){
+        body_color.style.backgroundColor="pink"
+    }
+    function yellow1(){
+        body_color.style.backgroundColor="yellow"
+    }
+    function green1(){
+        body_color.style.backgroundColor="green"
+    }
+    
+
+
+
+    
+</script>
+
+
+</html>
