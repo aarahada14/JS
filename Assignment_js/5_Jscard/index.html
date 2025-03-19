@@ -12,51 +12,41 @@
 <!-- ........................................navbar start.............................................   -->
 <nav class="navbar navbar-dark bg-dark fixed-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Offcanvas dark navbar</a>
+    <a class="navbar-brand border rounded-circle p-2">
+      <i class="ri-shopping-cart-fill fs-3"></i>    </a>
 
-  <form id="search" class="d-flex mt-3" role="search">
-      <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchText">
-      <button class="btn btn-success" type="submit">Search</button>
-    </form>
+  <form id="search" class="d-flex" role="search">
+    <input style="width: 200px;" class="form-control bg-light me-3" type="search" placeholder="Search" aria-label="Search" id="advSearch"/>
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="searchText">
+    <button class="btn btn-success" type="submit">Search</button>
+  </form>
 
-    <input style="width: 200px;" class="form-control me-2 bg-light" type="search" placeholder="Search" aria-label="Search" id="advSearch" />
-
-    <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
-      🛒
-    </button>
-   
+  <button class="navbar-toggler border p-2" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar" aria-label="Toggle navigation">
+      <i class="ri-shopping-bag-fill"></i>
+  </button>
   </div>
 </nav>
 
-
-
-
-
-
 <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar" aria-labelledby="offcanvasDarkNavbarLabel">
   <div class="offcanvas-header">
-    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Dark offcanvas</h5>
+    <h5 class="offcanvas-title" id="offcanvasDarkNavbarLabel">Add to list</h5>
     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
   <div class="offcanvas-body">
       <div class="row g-2" id="cart-body">
-
       </div>
-
-  
   </div>
+  <div class="offcanvas-header p-3" id="total"></div>
 </div>
+<!-- ........................................navbar end .............................................   -->
 
 
 
-
-
-<div class="container">
+<!-- ........................................all start .............................................   -->
+<div class="container" style="margin-top: 100px;">
     <nav class="navbar navbar-expand-lg bg-body-tertiary  border border-2 border-dark-subtle rounded bg-secondary-subtle">
         <div class="container-fluid">
-          <a class="navbar-brand border border-primary rounded-circle p-2 bg-primary-subtle">
-            <i class="ri-shopping-cart-fill fs-3 text-primary"></i>
-          </a>
+          
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -92,10 +82,29 @@
         </div>
       </nav>
 </div>
-<!-- ........................................navbar end .............................................   -->
+<!-- ........................................all end .............................................   -->
 
 
-<div class="container my-5">
+<!-- ........................................ Modal start ........................................ -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Product Detail</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body" id="itembody">
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- ........................................ Modal end ........................................ -->
+
+<div class="container my-3">
         
     <div class="row g-3" id="row"></div>   
 </div>

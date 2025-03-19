@@ -247,6 +247,8 @@ let cart = JSON.parse(localStorage.getItem("cart")) || []
 let row = document.getElementById("row")
 let cartBody = document.getElementById("cart-body")
 let search = document.getElementById("search")
+let itembody = document.getElementById("itembody")
+let total = document.getElementById("total")
 document.getElementById('product').addEventListener("click", all)
 
 function all(){
@@ -328,6 +330,36 @@ showRow(newData)
 })
 
 
+function handleItem(id){
+  let newItem = data.find((ele) => ele.id==id)
+
+  const {image, title, category, price, rating, description} = newItem
+
+  itembody.innerHTML = `
+      <div class="card h-100 border-0 p-3">
+                <div class="row justify-content-center align-items-center">
+                  <div class="col-4">
+                       <img src=${image} class="card-img-top" alt="...">
+                    </div>
+                    <div class="col-8">
+                      <div class="card-body  p-1"> 
+                         <h6 class="card-title">${title}</h6> 
+                           <div class="d-flex  justify-content-between my-2">
+                          <span class="badge text-bg-light">$ ${price}</span>
+                          <span class="badge text-bg-light">⭐ ${rating.rate}</span>
+                        </div>
+                           <p class="card-text mb-2">${category}</p>
+                           <p class="card-text mb-2">${description}</p>
+                        <a onclick="handleCart(${id})" class="btn btn-dark w-25">Add</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+  `
+
+}
+
+
 
  function showRow(data){
     row.innerHTML="";
@@ -350,7 +382,8 @@ showRow(newData)
                       </div>
                        <hr>
                       <div class="d-flex justify-content-center">
-                        <a onclick="handleCart(${ele.id})" class=" btn btn-dark w-25">Add Cart</a>
+                        <a onclick="handleCart(${ele.id})" class=" btn btn-dark w-25 me-2">Add</a>
+                        <a onclick="handleItem(${ele.id})" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn btn-secondary w-25">More</a>
                       </div>
                   </div>
             </div>
@@ -368,19 +401,22 @@ function showCart(){
     cartBody.innerHTML += `
        <div class="col-12">
                 <div class="card h-100">
-                  <div class="row">
+                  <div class="row justify-content-center align-items-center">
                     <div class="col-4">
-                       <img src=${el.image} height="100px" class="card-img-top border" alt="...">
+                       <img src=${el.image} height="100px" class="card-img-top" alt="...">
                     </div>
                     <div class="col-8">
-                      <div class="card-body  p-1"> 
-                         <h6 class="card-title">${el.title}</h6> 
-                           <p class="card-text mb-2">${el.category}</p>
-                        <div class="d-flex  justify-content-between">
+                      <div class="card-body  p-1">
+                        <h4 class="card-text mb-2">${el.category}</h4>
+                        <h6 class="card-title">${el.title}</h6> 
+                           
+                        <div class="d-flex pb-2  justify-content-between">
                           <span class="badge text-bg-light">$ ${el.price}</span>
                           <span class="badge text-bg-light">⭐ ${el.rating.rate}</span>
                         </div>
                         <a onclick="deleteCart(${el.id})" class="btn btn-danger btn-sm"><i class="ri-delete-bin-2-fill"></i></a>
+                        <a onclick="handleItem(${el.id})" data-bs-toggle="modal" data-bs-target="#exampleModal" class="btn  btn-secondary btn-sm">More</a>
+                      </div>
                       </div>
                     </div>
                   </div>
@@ -388,8 +424,29 @@ function showCart(){
             </div>
     `
   })
+  total.innerHTML = ` 
+  <div class="container bg-light text-dark rounded-2">
+            <div class="row g-2">
+              <div class="col-4 p-3">
+                <b>item No:</b>
+                <span class="badge px-3 py-2 text-bg-dark"> ${cart.length} </span>
+              </div>
+              <div class="col-4 p-3">
+                <b>Offer:</b>
+              </div>
+              <div class="col-4 p-3 text-center">
+                <b>Total :</b>
+                <span class="badge px-3 py-2 text-bg-dark">${cart.reduce(( sum, ele) => ele.price +sum, 0)}</span>
+              </div>
+            </div>
+        </div>
+  `
+
  }
 
  showCart()
+ 
+
+
 
 
