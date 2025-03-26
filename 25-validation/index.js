@@ -55,7 +55,7 @@ let val = e.target.value
 pass1.addEventListener("change", function(e){
     let val = e.target.value;
     if(val.includes("@") || val.includes("?") || val.includes("$")){
-         let span2 = document.getElementById("span2")
+        let span2 = document.getElementById("span2")
         span2.style.display = "none"
     }
     else{
@@ -65,8 +65,6 @@ pass1.addEventListener("change", function(e){
 
 
 })
-
-
 
 
 
