@@ -51,10 +51,6 @@ function start(){
     
     
     
-    
-    
-    
-    
     let sound = document.querySelector("audio")
     const triggers = document.querySelectorAll(".js")
     const defaults = {
