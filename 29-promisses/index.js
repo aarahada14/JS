@@ -94,33 +94,34 @@
 
 //----------------------------------------------showing data--------------------------------------------------
 
-fetch('https://fakestoreapi.com/roducts')
-.then((response) => response.json())
-.then((res)=> showData(res))
-.catch(() =>{
-    console.log("something went wrong in api..!")
-     document.querySelector("body").innerHTML = `<img width="800px" src="https://i.pinimg.com/originals/e4/30/10/e430101033efff9a294eaafecbac846a.gif" /> <h3>something went wrong in api..!</h3>`
-})
-.finally
+// fetch('https://fakestoreapi.com/roducts')
+// .then((response) => response.json())
+// .then((res)=> showData(res))
+// .catch(() =>{
+//     console.log("something went wrong in api..!")
+//      document.querySelector("body").innerHTML = `<img width="800px" src="https://i.pinimg.com/originals/e4/30/10/e430101033efff9a294eaafecbac846a.gif" /> <h3>something went wrong in api..!</h3>`
+// })
+// .finally
 
 
 
 
-function showData(data){
-    document.querySelector("body").innerHTML = ""
+// function showData(data){
+//     document.querySelector("body").innerHTML = ""
     
-    data.map((ele)=>{
+//     data.map((ele)=>{
         
-        document.querySelector("body").innerHTML += `<img width="50px" src=${ele.image} /> <h3>${ele.title}</h3>`
-    })
+//         document.querySelector("body").innerHTML += `<img width="50px" src=${ele.image} /> <h3>${ele.title}</h3>`
+//     })
 
-}
+// }
 
 
 
 
 
 //-----------------------------------------data, error, and loading--------------------------------------------------
+
 
 // let loading = true;
 
