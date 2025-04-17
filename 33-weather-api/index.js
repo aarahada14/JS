@@ -75,12 +75,12 @@ function showWeather(data){
                         </div>
                     </div>
     `
+    
 }
 
 
 function showWeatherList(ele){
     list.innerHTML = ""
-    
     ele.list.map((data)=>{
         list.innerHTML += `
              <div class="row my-2 shadow-md">
